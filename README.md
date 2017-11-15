@@ -2,6 +2,8 @@
 
 This project is very like [SuperAgent](https://visionmedia.github.io/superagent/), just implemented in .Net Core platform.
 
+You can install it by nuget, [WebCrawler](https://www.nuget.org/packages/WebCrawler).
+
 ## Get Started
 
 ```c#
