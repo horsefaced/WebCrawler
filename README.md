@@ -16,7 +16,7 @@ This project is very like [SuperAgent](https://visionmedia.github.io/superagent/
 ## Request 
 
 After your create a new or use exists Crawler object, the first method you should call is **Get** or **Post**.
-When you call Get or Post method, the method will clear all data from previous request, except cookie and header. So if you call look like this 
+When you call Get or Post method, the method will clear all data from previous request, except cookie and header. So if you call look like this 
 
 ```c#
     new Crawler().Field("name", "manny").Post("www.someurl.io/api/pet");
@@ -25,7 +25,7 @@ the field data will be clear.
 
 Get and Post method accept absolute URLs only, because this project is not run in browser, it don't know your base URL.
 
-**DELETE, HEAD, PATCH, PUT** have not been implemented yet. 
+**DELETE, HEAD, PATCH, PUT** have not been implemented yet. 
 
 ### Setting header fields
 
@@ -37,7 +37,7 @@ Setting header fields is very simple, invoke .SetHeader() with field name and va
         .SetHeader("API-Key", "foobar")
         .End();
 ```
-You may also pass an IDictionary object or an Object to SetHeader() method. If you pass an IDictionary, method will get each KeyValuePair to header. If you pass and Object, method will get each fields in this object, use field's name is key and use field's value is value.
+You may also pass an IDictionary or an Object to SetHeader() method. If you pass an IDictionary, method will get each KeyValuePair to header. If you pass an Object, method will get each fields in this object, use field's name is key and use field's value is value.
 
 ```c#
     private class Header
@@ -57,7 +57,7 @@ You may also pass an IDictionary object or an Object to SetHeader() method. If y
 ```
 
 ### Get Request
-The .Query() method accept name and value, which will be used in url's query-string. The follow will produce the path www.some.io?query=Manny&range=1..5&order=desc
+The .Query() method accept name and value, which will be used in url's query-string. The follow will produce the path is www.some.io?query=Manny&range=1..5&order=desc
 
 ```c#
     new Crawler()
@@ -69,7 +69,10 @@ The .Query() method accept name and value, which will be used in url's query-str
 ```
 
 ### Post request
-The .Query() method is the same role in Get request. The .Field() method accept name and value also, but which will be used in form data or json. 
+The .Query() method is the same role in Post request as it in Get request. 
+
+The .Field() method accept name and value also, but which will be used in form data or json. 
+
 The .Type() method decide Post request body is Crawler.DataType.JSON or Crawler.DataType.FORM. The follow request, when it is JSON, will produce a json object string which look like { query: 'Manny', range: '1..5', order: 'desc' }, when it is FORM, will produce a form string which look like query=Manny&range=1..5&order=desc.
 
 ```c#
