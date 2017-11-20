@@ -105,7 +105,7 @@ The .SetCookie() accept key and value, and it will use your Get or Post target u
 ```
 ## Response
 
-Response can only get through Crawler.End() method. 
+Response can only be got through Crawler.End() method. 
 
 ### Text
 The .Text() method return the request raw text content. it will auto encoded by response's charactset.
@@ -114,7 +114,7 @@ The .Text() method return the request raw text content. it will auto encoded by 
 You can also use .Charset() method to appoint a charset to encoded the response's raw content.
 
 ### Body
-If the response's raw data can be parsed to a json object, this .Body() method will return a NewtonJSON's JObject, otherwise it will return null.
+If the response's raw data can be parsed to a json object, the .Body() method will return a NewtonJSON's JObject, otherwise it will return null.
 
 ### ToFile
 Write all byte data from response to a file.
