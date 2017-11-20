@@ -27,7 +27,13 @@ the field data will be clear.
 
 Get and Post method accept absolute URLs only, because this project is not run in browser, it don't know your base URL.
 
-**DELETE, HEAD, PATCH, PUT** have not been implemented yet. 
+## DELETE, HEAD
+
+Those method are just like **Get** method
+
+## PATCH, PUT
+
+Those method are just like **Post** 
 
 ### Setting header fields
 

@@ -61,6 +61,20 @@ namespace WebCrawler
             return this;
         }
 
+        public Crawler Head(string url)
+        {
+            Get(url);
+            this.method = "HEAD";
+            return this;
+        }
+
+        public Crawler Delete(string url)
+        {
+            Get(url);
+            this.method = "DELETE";
+            return this;
+        }
+
         private void Clear()
         {
             this.data.Clear();
@@ -69,6 +83,19 @@ namespace WebCrawler
             this.redirectNum = DEFAULT_REDIRECT_NUM;
         }
 
+        public Crawler Put(string url)
+        {
+            Post(url);
+            this.method = "PUT";
+            return this;
+        }
+
+        public Crawler Patch(string url)
+        {
+            Post(url);
+            this.method = "PATCH";
+            return this;
+        }
 
         public Crawler Post(string url)
         {
@@ -189,7 +216,7 @@ namespace WebCrawler
 
         private void ProcessPostData(HttpWebRequest request)
         {
-            if (this.method == "GET") return;
+            if (this.method.Equals("GET") || this.method.Equals("HEAD") || this.method.Equals("DELETE")) return;
 
             if (this.type == DataType.JSON) ProcessJSONData(request);
             else ProcessFormData(request);
