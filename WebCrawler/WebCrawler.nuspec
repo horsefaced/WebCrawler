@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package>
+    <metadata>
+        <id>WebCrawler</id>
+        <title>WebCrawler</title>
+        <version>1.0.3</version>
+        <description>A web agent like superagent</description>
+        <authors>horsefaced</authors>
+        <projectUrl>https://github.com/horsefaced/WebCrawler</projectUrl>
+        <tags>superagent webclient webspider</tags>
+        <licenseUrl>https://raw.githubusercontent.com/horsefaced/WebCrawler/master/LICENSE</licenseUrl>
+    </metadata>
+</package>
