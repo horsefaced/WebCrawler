@@ -239,9 +239,9 @@ namespace WebCrawler
             foreach (var kv in this.data)
             {
                 if (kv.Value is string)
-                    sb.Add(string.Format("{0}={1}", kv.Key, Uri.EscapeDataString(kv.Value.ToString())));
+                    sb.Add(string.Format("{0}={1}", Uri.EscapeDataString(kv.Key), Uri.EscapeDataString(kv.Value.ToString())));
                 else
-                    sb.Add(string.Format("{0}={1}", kv.Key, Uri.EscapeDataString(JsonConvert.SerializeObject(kv.Value))));
+                    sb.Add(string.Format("{0}={1}", Uri.EscapeDataString(kv.Key), Uri.EscapeDataString(JsonConvert.SerializeObject(kv.Value))));
             }
 
             byte[] bytes = this.dataEncoding.GetBytes(string.Join("&", sb));
